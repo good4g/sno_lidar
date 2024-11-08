@@ -1,9 +1,12 @@
 import math
 
+
 import pygame as pg
-from obj_3d import  Object3D
+from obj_3d import Object3D
 from camera import *
 from projection import *
+
+from rangefinder.get_data import get_clean_data
 
 
 class SoftWareRender:
@@ -26,9 +29,11 @@ class SoftWareRender:
     def create_objects(self):
         self.camera = Camera(self, [0.5, 1, -4])
         self.projection = Projection(self)
-        self.object = Object3D(self)
+        v, f = get_clean_data()
+        print(len(v), len(f))
+        self.object = Object3D(self, v, f)
         self.object.translate([0.2, 0.4, 0.2])
-        self.object.rotate_y(math.pi / 3)
+        #self.object.rotate_y(math.pi / 3)
 
     def draw(self):
         self.screen.fill(pg.Color('darkslategray'))
