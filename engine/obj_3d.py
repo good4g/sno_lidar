@@ -30,9 +30,9 @@ class Object3D:
             if not np.any((polygon == self.render.H_WIDTH) | (polygon == self.render.H_HEIGHT)):
                 pg.draw.polygon(self.render.screen, pg.Color('orange'), polygon, 3)
 
-        for vertex in vertexes:
-            if not np.any((vertex == self.render.H_WIDTH) | (vertex == self.render.H_HEIGHT)):
-                pg.draw.circle(self.render.screen, pg.Color('white'), vertex, 6)
+        #for vertex in vertexes:
+            #if not np.any((vertex == self.render.H_WIDTH) | (vertex == self.render.H_HEIGHT)):
+                #pg.draw.circle(self.render.screen, pg.Color('white'), vertex, 6)
 
     def translate(self, pos):
         self.vertices = self.vertices @ translate(pos)

@@ -30,7 +30,7 @@ class SoftWareRender:
         self.camera = Camera(self, [0.5, 1, -4])
         self.projection = Projection(self)
         v, f = get_clean_data()
-        print(len(v), len(f))
+        print(v, f)
         self.object = Object3D(self, v, f)
         self.object.translate([0.2, 0.4, 0.2])
         #self.object.rotate_y(math.pi / 3)
